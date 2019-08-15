@@ -1,0 +1,17 @@
+.idea
+.idea/
+
+model/
+models/
+testData/
+output/
+outputs/
+
+# temporary files
+*.txt~
+*.pyc
+.DS_Store
+.gitignore~
+
+*.h5
+*.npz
