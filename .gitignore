@@ -2,7 +2,6 @@
 .idea/
 
 model/
-models/
 testData/
 output/
 outputs/
@@ -14,4 +13,3 @@ outputs/
 .gitignore~
 
 *.h5
-*.npz
