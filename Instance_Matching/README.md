@@ -1,6 +1,6 @@
 # Instance Matching Module
 
-This folder holds the code and dataset for *Instance Matching Module* in the SketchyScene Colorization system.
+This directory hosts the code and dataset for *Instance Matching Module* in the SketchyScene Colorization system.
 
 ## Requirements
 - Python 3
