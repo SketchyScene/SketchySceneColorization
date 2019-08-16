@@ -11,8 +11,8 @@ This folder holds the code and dataset for *Instance Matching Module* in the Ske
 
 ## Preparations
 
-- Please follow the instructions [here](https://github.com/MarkMoHR/SketchySceneColorization/tree/master/Instance_Matching/data_preparation) for *MATCHING* dataset preparation.
-- If you want to train the network, please follow the the instructions [here](https://github.com/MarkMoHR/SketchySceneColorization/tree/master/Instance_Matching/models) for pre-trained model preparation.
+- Please follow the instructions [here](/Instance_Matching/data_preparation) for *MATCHING* dataset preparation.
+- If you want to train the network, please follow the the instructions [here](/Instance_Matching/models) for pre-trained model preparation.
 
 
 ## Training
@@ -78,7 +78,7 @@ python3 matching_main.py --mode 'inference' --data_base_dir 'examples' --seg_dat
 - Try other instructions for multiple times by changing the text after `--instruction` :)
 
 If everything goes well, you can obtain the result like this:
-![example](https://github.com/MarkMoHR/SketchySceneColorization/blob/master/Instance_Matching/figures/result_example.png)
+![example](/Instance_Matching/figures/result_example.png)
 
 ## Citation
 
