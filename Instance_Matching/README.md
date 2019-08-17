@@ -31,7 +31,7 @@ Please follow these steps for the evaluation:
 
 1. Please make sure the trained model has been placed under `outputs/snapshots`. We have also provided our trained model, which can be downloaded [here](https://drive.google.com/drive/folders/1wGU3vln9Nc_Z2NV2F5nyt_2NbqDsvuRO?usp=sharing).
 
-1. Our *Instance Matching Module* consists of *Mask R-CNN* for instance segmentation. Since the evaluation will performed on a sketch image for multiple times (several testing sentences), it is recommended to generate the segmented data first and reuse it to avoid the redundant time caused by the repeated forwarding procedure. To do so, please go to the [SketchyScene](https://github.com/SketchyScene/SketchyScene) repository for some preparations:
+1. Our *Instance Matching Module* consists of *Mask R-CNN* for instance segmentation. Since the evaluation will be performed on a sketch image for multiple times (several testing sentences), it is recommended to generate the segmented data first and reuse it to avoid the redundant time caused by the repeated forwarding procedure. To do so, please go to the [SketchyScene](https://github.com/SketchyScene/SketchyScene) repository for some preparations:
 
     1. Strictly follow the instructions in the [Instance-Segmentation](https://github.com/SketchyScene/SketchyScene#instance-segmentation) part to setup the *Mask R-CNN* model. 
 
@@ -56,7 +56,7 @@ Please follow these steps for the evaluation:
 
 ## Inference
 
-Make sure the trained model and the segmented data have been placed correctly as in the [Evaluation](#evaluation) part. Then run:
+Here you can select an sketch image and input any instructions to see the visual results. Please firstly make sure the trained model and the segmented data have been placed correctly as in the [Evaluation](#evaluation) part. Then run:
 
 ```
 python3 matching_main.py --mode 'inference' --data_base_dir 'path/to/SketchyScene-dataset' \
@@ -67,7 +67,7 @@ python3 matching_main.py --mode 'inference' --data_base_dir 'path/to/SketchyScen
 - Set `--image_id` to the image you want.
 - Input your instruction after `--instruction`.
 
-**For example**, we have provided a sketch image and its segmented data under `examples` directory. You can try it:
+:fire: **We have provided a test case for example:** a sketch image and its output segmentation data are placed under `examples` directory. You can try it:
 
 ```
 python3 matching_main.py --mode 'inference' --data_base_dir 'examples' --seg_data_dir 'examples' \
@@ -75,7 +75,7 @@ python3 matching_main.py --mode 'inference' --data_base_dir 'examples' --seg_dat
                          --instruction 'all the grasses are dark green'
 ```
 
-- Try other instructions for multiple times by changing the text after `--instruction` :)
+- Try other instructions for multiple times by changing the text `all the grasses are dark green` :)
 
 If everything goes well, you can obtain the result like this:
 ![example](/Instance_Matching/figures/result_example.png)
