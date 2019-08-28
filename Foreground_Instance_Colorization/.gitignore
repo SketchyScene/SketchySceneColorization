@@ -1,0 +1,19 @@
+.idea
+.idea/
+
+model/
+testData/
+output/
+outputs/
+
+captions/
+images/
+tfrecord/
+
+# temporary files
+*.txt~
+*.pyc
+.DS_Store
+.gitignore~
+
+*.h5

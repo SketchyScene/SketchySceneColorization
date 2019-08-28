@@ -4,7 +4,7 @@ This repository hosts the datasets and the code for the SketchyScene Colorizatio
 
 ## Outline
 - [Instance Matching](#instance-matching)
-- [Foreground Instance Colorization (TBA)](#foreground-instance-colorization)
+- [Foreground Instance Colorization](#foreground-instance-colorization)
 - [Background Colorization (TBA)](#background-colorization)
 - [The Whole Pipeline (TBA)](#the-whole-pipeline)
 - [Citation](#citation)
@@ -16,7 +16,7 @@ For the details of *MATCHING* dataset and the code, please refer to the [Instanc
 
 ## Foreground Instance Colorization
 
-(TBA)
+For the details of *FOREGROUND* dataset and the code, please refer to the [Foreground_Instance_Colorization](/Foreground_Instance_Colorization) folder.
 
 ## Background Colorization
 
