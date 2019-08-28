@@ -1,0 +1,22 @@
+.idea
+.idea/
+
+model/
+testData/
+output/
+outputs/
+
+background/
+captions/
+foreground/
+inner_mask/
+segment/
+user_paint/
+
+# temporary files
+*.txt~
+*.pyc
+.DS_Store
+.gitignore~
+
+*.h5
