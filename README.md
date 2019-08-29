@@ -1,6 +1,8 @@
-# SketchySceneColorization
+# SketchySceneColorization - SIGA2019
 
-This repository hosts the datasets and the code for the SketchyScene Colorization system. Please refer to our paper for more information: [Language-based Colorization of Scene Sketches (TBA)]().
+This repository hosts the datasets and the code for the SketchyScene Colorization system (**SIGGRAPH Asia 2019**). Please refer to our paper for more information: [Language-based Colorization of Scene Sketches (TBA)]().
+
+![examples](/figures/teaser5.png)
 
 ## Outline
 - [Instance Matching](#instance-matching)
