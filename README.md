@@ -1,8 +1,10 @@
 # SketchySceneColorization - SIGA2019
 
-This repository hosts the datasets and the code for the SketchyScene Colorization system (**SIGGRAPH Asia 2019**). Please refer to our paper for more information: [Language-based Colorization of Scene Sketches (TBA)]().
+This repository hosts the datasets and the code for the SketchyScene Colorization system (**SIGGRAPH Asia 2019**). Please refer to our paper for more information: [Language-based Colorization of Scene Sketches](http://sweb.cityu.edu.hk/hongbofu/doc/language-based_sketch_colorization_SA19.pdf).
 
 ![examples](/figures/teaser5.png)
+
+[Paper](http://sweb.cityu.edu.hk/hongbofu/doc/language-based_sketch_colorization_SA19.pdf) | [Supplementary Material](https://drive.google.com/file/d/1KH2J5U0fAuG6EXDPmIrHEV5uyfRvGPsV/view?usp=sharing) | [Project Page (TBA)]() 
 
 ## Outline
 - [Instance Matching](#instance-matching)
@@ -33,5 +35,13 @@ For the details of *BACKGROUND* dataset and the code, please refer to the [Backg
 Please cite the corresponding paper if you found the datasets or code useful:
 
 ```
-TBA......
+@article{zouSA2019sketchcolorization,
+  title = {Language-based Colorization of Scene Sketches},
+  author = {Zou, Changqing and Mo, Haoran and Gao, Chengying and Du, Ruofei and Fu, Hongbo},
+  journal = {ACM Transactions on Graphics (Proceedings of ACM SIGGRAPH Asia 2019)},
+  year = {2019},
+  volume = 38,
+  number = 6,
+  pages = {233:1--233:16}
+}
 ```

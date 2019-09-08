@@ -87,5 +87,13 @@ Results can be found under `outputs/(time-stamp)/inference_results`.
 Please cite the corresponding paper if you found the datasets or code useful:
 
 ```
-TBA......
+@article{zouSA2019sketchcolorization,
+  title = {Language-based Colorization of Scene Sketches},
+  author = {Zou, Changqing and Mo, Haoran and Gao, Chengying and Du, Ruofei and Fu, Hongbo},
+  journal = {ACM Transactions on Graphics (Proceedings of ACM SIGGRAPH Asia 2019)},
+  year = {2019},
+  volume = 38,
+  number = 6,
+  pages = {233:1--233:16}
+}
 ```
