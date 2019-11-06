@@ -4,7 +4,7 @@ This repository hosts the datasets and the code for the SketchyScene Colorizatio
 
 ![examples](/figures/teaser5.png)
 
-[Paper](http://sweb.cityu.edu.hk/hongbofu/doc/language-based_sketch_colorization_SA19.pdf) | [Supplementary Material](https://drive.google.com/file/d/1KH2J5U0fAuG6EXDPmIrHEV5uyfRvGPsV/view?usp=sharing) | [Project Page (TBA)]() 
+[Paper](http://mo-haoran.com/files/SIGA19/SketchColorization_paper_SA2019.pdf) | [Supplementary Material](http://mo-haoran.com/files/SIGA19/SketchColorization_supplementary_SA2019.pdf) | [Project Page](https://sketchyscene.github.io/SketchySceneColorization/)
 
 ## Outline
 - [Instance Matching](#instance-matching)
