@@ -23,6 +23,9 @@ color_list = ['dark brown', 'light brown', 'light gray', 'dark gray',
               'black', 'red', 'dark green', 'light green', 'dark blue', 'light blue', 'yellow',
               'orange', 'pink', 'purple']
 
+simple_color_list = ['brown', 'gray', 'black', 'red', 'green', 'blue', 'yellow', 'orange',
+                     'pink', 'purple', 'cyan', 'white']
+
 category_list = ['bench', 'bird', 'bus', 'butterfly',
                  'car', 'cat', 'chair', 'chicken', 'cloud', 'cow',
                  'dog', 'duck', 'horse', 'house', 'grass',
@@ -58,8 +61,21 @@ def search_for_self_category(caption):
             is_es = True
             break
 
-    assert self_category is not None
     return self_category, is_es
+
+
+def search_for_color(caption):
+    words = SENTENCE_SPLIT_REGEX.split(caption.strip())
+    words = [w.lower() for w in words if len(w.strip()) > 0 and w != '-']
+
+    have_color = False
+
+    for w in words:
+        if w in simple_color_list:
+            have_color = True
+            break
+
+    return have_color
 
 
 ## Public

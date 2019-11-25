@@ -11,6 +11,7 @@ from PIL import Image
 import sys
 
 sys.path.append('data_processing')
+sys.path.append('Background_Colorization/data_processing')
 from text_processing import preprocess_sentence, load_vocab_dict_from_file
 from image_processing import load_image, load_region_mask
 
