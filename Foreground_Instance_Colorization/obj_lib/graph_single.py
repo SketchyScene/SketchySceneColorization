@@ -4,6 +4,9 @@ import tensorflow as tf
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import clip_ops
 
+import sys
+sys.path.append('Foreground_Instance_Colorization/obj_lib')
+
 import models_collection as models
 from input_pipeline import get_num_classes, split_inputs
 from inception_v4 import inception_v4_base, inception_v4, inception_v4_arg_scope

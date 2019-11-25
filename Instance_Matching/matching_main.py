@@ -348,8 +348,8 @@ def test(weights_name, data_base_dir, dataset_split, captions_base_dir, seg_data
             # Compute mask AP
             if cal_mask_AP:
                 # get pred_instance_mask by segm_data and predicts
-                pred_masks, pred_scores, _, _ = sketch_data_processing.get_pred_instance_mask(segm_data_npz_path,
-                                                                                              predicts.copy())
+                pred_masks, pred_scores, _, _, _ = sketch_data_processing.get_pred_instance_mask(segm_data_npz_path,
+                                                                                                 predicts.copy())
                 # print('caption_gt_masks', caption_gt_masks.shape)
                 # print('pred_masks', pred_masks.shape)
                 # print('pred_scores', pred_scores.shape, pred_scores)
@@ -470,7 +470,7 @@ def inference(weights_name, data_base_dir, dataset_split, seg_data_base_dir, ima
     # get pred_instance_mask by segm_data and predicts
     segm_data_npz_path = os.path.join(seg_data_base_dir, dataset_split, 'seg_data',
                                       str(image_id) + '_datas.npz')
-    pred_masks, pred_scores, pred_boxes, pred_class_ids = sketch_data_processing.get_pred_instance_mask(
+    pred_masks, pred_scores, pred_boxes, pred_class_ids, _ = sketch_data_processing.get_pred_instance_mask(
         segm_data_npz_path, predicts.copy())
     print('pred_masks', pred_masks.shape)
     print('pred_scores', pred_scores.shape, pred_scores)

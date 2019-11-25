@@ -21,6 +21,14 @@ def load_image(image_dir, image_id):
     return image
 
 
+def load_image2(image_path):
+    image = Image.open(image_path).convert("RGB")
+    if image.width != IMAGE_SIZE or image.height != IMAGE_SIZE:
+        image = image.resize((IMAGE_SIZE, IMAGE_SIZE), resample=Image.NEAREST)
+    image = np.array(image, dtype=np.float32)  # shape = [H, W, 3]
+    return image
+
+
 def load_testing_image(image_dir, image_id):
     image_name = os.path.join(image_dir, str(image_id) + '.png')
     image = Image.open(image_name).convert("RGB")
@@ -191,9 +199,26 @@ def compute_mask_iou(maskA, maskB):
     return iou
 
 
+def expand_small_segmentation_mask(pred_masks_small_list, pred_boxes):
+    pred_masks = []
+
+    for i in range(len(pred_masks_small_list)):
+        pred_mask_small = pred_masks_small_list[i]
+        y1, x1, y2, x2 = pred_boxes[i]
+
+        pred_mask_exp = np.zeros((IMAGE_SIZE, IMAGE_SIZE), dtype=np.uint8)
+        pred_mask_exp[y1: y2 + 1, x1: x2 + 1] = pred_mask_small
+        pred_masks.append(pred_mask_exp)
+
+    pred_masks = np.stack(pred_masks, axis=0)  # (N, IMAGE_SIZE, IMAGE_SIZE)
+    return pred_masks
+
+
 def post_processing_mask_with_segmentation(segm_data_path, pred_mask, iou_threshold=0.9):
     npz = np.load(segm_data_path)
-    pred_masks = np.array(npz['pred_masks'], dtype=np.uint8)  # [N, H, W]
+    pred_masks_s = npz['pred_masks']
+    pred_boxes = np.array(npz['pred_boxes'], dtype=np.int32)  # [N, 4]
+    pred_masks = expand_small_segmentation_mask(pred_masks_s, pred_boxes)  # [N, H, W]
 
     mask_IoU_list = []
 
@@ -228,14 +253,16 @@ def compute_mask_occupied_percentage(mask_overall, mask_instance):
 
 def get_pred_instance_mask(segm_data_path, pred_overall_mask, mask_occupied_threshold=0.5):
     npz = np.load(segm_data_path)
-    pred_masks = np.array(npz['pred_masks'], dtype=np.uint8)  # [N, H, W]
+    pred_masks_s = npz['pred_masks']
     pred_class_ids = np.array(npz['pred_class_ids'], dtype=np.int32)  # [N], of the 46 ids
     pred_boxes = np.array(npz['pred_boxes'], dtype=np.int32)  # [N, 4]
+    pred_masks = expand_small_segmentation_mask(pred_masks_s, pred_boxes)  # [N, H, W]
 
     pred_masks_list = []
     pred_scores_list = []
     pred_class_ids_list = []
     pred_boxes_list = []
+    matched_inst_indices = []
 
     for i in range(pred_masks.shape[0]):
         candidate_mask = pred_masks[i]
@@ -245,12 +272,13 @@ def get_pred_instance_mask(segm_data_path, pred_overall_mask, mask_occupied_thre
             pred_scores_list.append(mask_occupied_percentage)
             pred_class_ids_list.append(pred_class_ids[i])
             pred_boxes_list.append(pred_boxes[i])
+            matched_inst_indices.append(i)
 
     if len(pred_masks_list) != 0:
         return np.stack(pred_masks_list, axis=2), np.stack(pred_scores_list), \
-               np.stack(pred_boxes_list), np.stack(pred_class_ids_list)
+               np.stack(pred_boxes_list), np.stack(pred_class_ids_list), matched_inst_indices
     else:
-        return np.array(()), np.array(()), np.array(()), np.array(())
+        return np.array(()), np.array(()), np.array(()), np.array(()), matched_inst_indices
 
 
 def trim_zeros(x):

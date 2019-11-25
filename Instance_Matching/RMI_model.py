@@ -1,5 +1,8 @@
 import tensorflow as tf
 
+import sys
+sys.path.append('Instance_Matching')
+
 import deeplab_model, fcn8s_model, segnet_model, deeplab_v3plus_model
 from utils.processing_tools import generate_spatial_batch
 from utils import loss
