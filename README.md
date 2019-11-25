@@ -10,9 +10,17 @@ This repository hosts the datasets and the code for the SketchyScene Colorizatio
 - [Instance Matching](#instance-matching)
 - [Foreground Instance Colorization](#foreground-instance-colorization)
 - [Background Colorization](#background-colorization)
-- [The Whole Pipeline (TBA)](#the-whole-pipeline)
-- [Citation](#citation)
+- [The Whole Pipeline](#the-whole-pipeline)
 
+## Requirements
+- Python 3
+- Tensorflow (>= 1.3.0)
+- scipy
+- PIL
+- skimage
+
+## Preparations
+- Please follow the instructions in the next three sections to download the pre-trained models and place them in the right directories.
 
 ## Instance Matching
 
@@ -28,7 +36,29 @@ For the details of *BACKGROUND* dataset and the code, please refer to the [Backg
 
 ## The Whole Pipeline
 
-(TBA)
+Our system allows users to colorize the sketches through language instructions. If the result is not satisfactory, users can also withdraw the last instruction.
+
+:fire: **We have provided some test examples** in `examples` directory.
+
+1. To *colorize* a sketch, run the command like:
+
+    ```
+    python3 sketchyscene_colorization_main.py --image_id 9996 \
+                                              --instruction 'the bus is orange with gray windows'
+    ```
+    - Set `image_id` to the sketch you want.
+    - Try other instructions by changing the `instruction`.
+    
+    You will see the results in `outputs` directory.
+  
+2. To *withdraw* the last instruction, run the command like:
+
+    ```
+    python3 sketchyscene_colorization_main.py --command 'withdraw' --image_id 9996
+    ```
+    
+    See what happens in `outputs` directory :)
+
 
 ## Citation
 
