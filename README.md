@@ -1,15 +1,18 @@
 # SketchySceneColorization - SIGA2019
 
-This repository hosts the datasets and the code for the SketchyScene Colorization system (**SIGGRAPH Asia 2019**). Please refer to our paper for more information: [Language-based Colorization of Scene Sketches](http://sweb.cityu.edu.hk/hongbofu/doc/language-based_sketch_colorization_SA19.pdf).
-
-![examples](/figures/teaser5.png)
-
 [Paper](http://mo-haoran.com/files/SIGA19/SketchColorization_paper_SA2019.pdf) | [Supplementary Material](http://mo-haoran.com/files/SIGA19/SketchColorization_supplementary_SA2019.pdf) | [Project Page](https://sketchyscene.github.io/SketchySceneColorization/)
 
+This repository hosts the datasets and the code for the SketchyScene Colorization system (**SIGGRAPH Asia 2019**). Please refer to our paper for more information: [Language-based Colorization of Scene Sketches](http://sweb.cityu.edu.hk/hongbofu/doc/language-based_sketch_colorization_SA19.pdf).
+
+![examples](/figures/teaser.gif)
+
+
+
 ## Outline
-- [Instance Matching](#instance-matching)
-- [Foreground Instance Colorization](#foreground-instance-colorization)
-- [Background Colorization](#background-colorization)
+- [System Overview](#system-overview)
+- [Instance Matching Model](#instance-matching-model)
+- [Foreground Instance Colorization Model](#foreground-instance-colorization-model)
+- [Background Colorization Model](#background-colorization-model)
 - [The Whole Pipeline](#the-whole-pipeline)
 
 ## Requirements
@@ -20,19 +23,33 @@ This repository hosts the datasets and the code for the SketchyScene Colorizatio
 - skimage
 
 ## Preparations
-- Please follow the instructions in the next three sections to download the pre-trained models and place them in the right directories.
+- Please follow the instructions in the following sections to download the pre-trained models and place them in the correct directories.
 
-## Instance Matching
+---
+
+## System Overview
+
+Our system supports two-mode interactive colorization for a given input scene sketch and text-based colorization instructions, using three models, namely, the instance matching model, foreground colorization model, and background colorization model.
+
+![system](/figures/system_overview.png)
+
+## Instance Matching Model
 
 For the details of *MATCHING* dataset and the code, please refer to the [Instance_Matching](/Instance_Matching) directory.
 
-## Foreground Instance Colorization
+![matching](/figures/instance_match_network.png)
+
+## Foreground Instance Colorization Model
 
 For the details of *FOREGROUND* dataset and the code, please refer to the [Foreground_Instance_Colorization](/Foreground_Instance_Colorization) directory.
 
-## Background Colorization
+![foreground](/figures/inst_color_network.png)
+
+## Background Colorization Model
 
 For the details of *BACKGROUND* dataset and the code, please refer to the [Background_Colorization](/Background_Colorization) directory.
+
+![background](/figures/bg_color_network.png)
 
 ## The Whole Pipeline
 
@@ -58,6 +75,8 @@ Our system allows users to colorize the sketches through language instructions. 
     ```
     
     See what happens in `outputs` directory :)
+
+![examples](/figures/result2.gif)
 
 
 ## Citation

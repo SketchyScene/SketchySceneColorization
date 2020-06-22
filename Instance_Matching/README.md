@@ -2,6 +2,9 @@
 
 This directory hosts the code and dataset for *Instance Matching Module* in the SketchyScene Colorization system.
 
+![example](/figures/instance_match_data_collection3.png)
+
+
 ## Requirements
 - Python 3
 - Tensorflow (>= 1.3.0)
