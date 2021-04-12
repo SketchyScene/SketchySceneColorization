@@ -1,0 +1,442 @@
+<style type="text/css">
+	body {
+		font-family: Georgia, "Times New Roman", Arial, sans-serif;
+		font-weight:300;
+		font-size:17px;
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+
+	h1 {
+		font-weight:bold;
+        font-size: 30px;
+	}
+	
+	h2 {
+		font-weight:300;
+        font-size: 24px;
+	}
+
+	.disclaimerbox {
+		background-color: #eee;
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		        15px 15px 0 0px #fff, /* The fourth layer */
+		        15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		        20px 20px 0 0px #fff, /* The fifth layer */
+		        20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		        25px 25px 0 0px #fff, /* The fifth layer */
+		        25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+
+	.vert-cent {
+		position: relative;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+<html>
+  <head>
+	  <title>Language-based Colorization of Scene Sketches</title>
+      <meta property="og:image" content=""/>
+      <meta property="og:title" content="Language-based Colorization of Scene Sketches" />
+  </head>
+
+  <body>
+    <br>
+          <center>
+          	<span style="font-size:36px;font-weight:bold">Language-based <font color=#d400ff>C</font><font color=#ef4470>o</font><font color=#26abe3>l</font><font color=#ffcc00>o</font><font color=#33cc33>r</font><font color=#d400ff>i</font><font color=#ef4470>z</font><font color=#26abe3>a</font><font color=#33cc33>t</font><font color=#ffcc00>i</font><font color=#ef4470>o</font><font color=#26abe3>n</font> of Scene Sketches</span><br><br>
+						
+	  		  <table align=center width=1000px>
+	  			  <tr>
+	  	              <td align=center width=150px>
+	  					<center>
+	  						<p style="font-size:18px"><a href="https://changqingzou.weebly.com/">Changqing Zou</a><sup>#1,2</sup></p>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align=center width=200px>
+	  					<center>
+	  						<p style="font-size:18px"><a href="http://mo-haoran.com/">Haoran Mo</a><sup>#1</sup>(joint first author)</p>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align=center width=100px>
+	  					<center>
+	  						<p style="font-size:18px"><a href="http://sdcs.sysu.edu.cn/content/2537">Chengying Gao</a><sup>*1</sup></p>
+		  		  		</center>
+		  		  	  </td>
+					  
+					  
+	  	              <td align=center width=100px>
+	  					<center>
+	  						<p style="font-size:18px"><a href="http://www.duruofei.com/">Ruofei Du</a><sup>3</sup></p>
+		  		  		</center>
+		  		  	  </td>
+					  <td align=center width=100px>
+	  					<center>
+	  						<p style="font-size:18px"><a href="http://sweb.cityu.edu.hk/hongbofu/">Hongbo Fu</a><sup>4</sup></p>
+		  		  		</center>
+		  		  	  </td>
+					</tr>
+			  </table><br>
+			  
+			  <table align=center width=800px>
+	  			  <tr>
+	  	              <td align=center width=200px>
+	  					<center>
+	  						<p style="font-size:18px">Sun Yat-sen University<sup>1</sup></p>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align=center width=250px>
+	  					<center>
+	  						<p style="font-size:18px">Huawei Noah's Ark Lab<sup>2</sup></p>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align=center width=100px>
+	  					<center>
+	  						<p style="font-size:18px">Google<sup>3</sup></p>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align=center width=250px>
+	  					<center>
+	  						<p style="font-size:18px">City University of Hong Kong<sup>4</sup></p>
+		  		  		</center>
+		  		  	  </td>
+					</tr>
+			  </table>
+			  
+			  <br>
+              <span style="font-size:18px">Accepted by <a href="https://sa2019.siggraph.org/">SIGGRAPH Asia 2019</a></span><br><br>
+
+	  		  <table align=center width=300px>
+	  			  <tr>
+	  	              <td align=center width=50px>
+	  					<center>
+							<span style="font-size:22px"><a href='http://mo-haoran.com/files/SIGA19/SketchColorization_paper_SA2019.pdf'>[Paper]</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align=center width=50px>
+	  					<center>
+	  						<span style="font-size:22px"><a href='https://github.com/SketchyScene/SketchySceneColorization'>[Code]</a></span>
+		  		  		</center>
+		  		  	  </td>
+			  </table>
+          </center>
+
+  		  <table align=center width=100%>
+  			  <tr>
+  	              <td>
+  					<center>
+  	                	<img class="" src = "https://cdn.jsdelivr.net/gh/SketchyScene/CDN-for-figures@1.0/figures/siga19/teaser.png" width="100%"></img></href>
+					</center>
+  	              </td>
+                </tr>
+				<br>
+  	              <td>
+                      <center>
+  	                	<span style="font-size:16px">Given a scene sketch, our system automatically produces a colorized cartoon image by progressively coloring foreground object instances and the background following user-specified language-based instructions.</span>
+                      </center>
+  	              </td>
+				  
+
+  		  </table>
+		  
+		<br><br>
+
+
+  		  <table align=center width=850px>
+	  		  <center><h1>Abstract</h1></center>
+	  		  <tr>
+	  		  	<td>
+	  		    </td>
+	  		  </tr>
+			</table>
+				Being natural, touchless, and fun-embracing, language-based inputs have been demonstrated effective for various tasks from image generation to literacy education for children. This paper for the first time presents a language-based system for interactive colorization of scene sketches, based on semantic comprehension. The proposed system is built upon deep neural networks trained on a large-scale repository of scene sketches and cartoonstyle color images with text descriptions. Given a scene sketch, our system allows users, via language-based instructions, to interactively localize and colorize specific foreground object instances to meet various colorization requirements in a progressive way. We demonstrate the effectiveness of our approach via comprehensive experimental results including alternative studies, comparison with the state-of-the-art methods, and generalization user studies. Given the unique characteristics of language-based inputs, we envision a combination of our interface with a traditional scribble-based interface for a practical multimodal colorization system, benefiting various applications.
+  		  <br><br>
+		  <hr>
+
+
+	  
+
+  		  <table align=center width=400px>
+	 		<center><h1>Download</h1></center>
+  			  <tr>
+				  <td><a href="http://mo-haoran.com/files/SIGA19/SketchColorization_paper_SA2019.pdf"><img class="layered-paper-big" style="height:150px" src="https://cdn.jsdelivr.net/gh/SketchyScene/CDN-for-figures@1.0/figures/siga19/paper.png"/></a></td>
+				  <td>
+					<span style="font-size:18pt">
+						<a href="http://mo-haoran.com/files/SIGA19/SketchColorization_paper_SA2019.pdf">[Main Paper]</a>
+						<br><br>
+						<a href="http://mo-haoran.com/files/SIGA19/SketchColorization_supplementary_SA2019.pdf">[Supplementary]</a>
+						<br><br>
+						<a href="https://github.com/SketchyScene/SketchySceneColorization">[Code]</a>
+						<br><br>
+						<a href="http://mo-haoran.com/files/SIGA19/SA2019_SketchColorization_355.pptx">[Presentation]</a>
+                    </span>
+					</td>
+              </tr>
+  		  </table>
+          <br><br>
+
+
+          <hr>
+          	  <table align=center width=100%>
+			    <center><h1>Methodology</h1></center>
+          		  <tr>
+				  
+				  <td>
+					<center><h2>A. &nbsp; System Overview</h2></center>
+  					<center>
+  	                	<img class="" src = "https://cdn.jsdelivr.net/gh/SketchyScene/CDN-for-figures@1.0/figures/siga19/system_overview.png" width="100%"></img></href>
+					</center>
+  	              </td>
+				  </tr>
+				  <tr>
+					  <td width=400px>
+							<span style="font-size:16px">Our system supports two-mode interactive colorization for a given input scene sketch and text-based colorization instructions, using three models, namely, the instance matching model, foreground colorization model, and background colorization model. It is not necessary to colorize foreground objects before background regions.
+					        </span>
+                      </td>
+				</tr>
+				
+				<tr>
+				  
+				  <td>
+				    <br>
+				    <br>
+					<center><h2>B.1 &nbsp;  Instance Matching Model</h2></center>
+  					<center>
+  	                	<img class="" src = "https://cdn.jsdelivr.net/gh/SketchyScene/CDN-for-figures@1.0/figures/siga19/instance_match_network.png" width="100%"></img></href>
+					</center>
+  	              </td>
+				  </tr>
+				  <tr>
+					  <td width=400px>
+							<span style="font-size:16px">This network is trained in an end-to-end manner to obtain the binary mask (shown in (b)). In the inferring phase, the generated binary mask is fused with the instance segmentation results generated by Mask R-CNN to obtain the final results.
+					        </span>
+                      </td>
+				</tr>
+				
+				<tr>
+				  
+				  <td>
+				    <br>
+				    <br>
+					<center><h2>B.2 &nbsp;  Foreground Colorization Model</h2></center>
+  					<center>
+  	                	<img class="" src = "https://cdn.jsdelivr.net/gh/SketchyScene/CDN-for-figures@1.0/figures/siga19/inst_color_network.png" width="100%"></img></href>
+					</center>
+  	              </td>
+				  </tr>
+				  <tr>
+					  <td width=400px>
+							<span style="font-size:16px">This network is able to colorize objects from different categories. The generator has a U-Net architecture based on MRU blocks, with skip connections between mirrored layers and an embedded RMI fusion module consisting of LSTM text encoders and multimodal LSTMs (mLSTM). It is referred to as the FG-MRU-RMI network for conciseness in the paper.
+                            </span>
+					  </td>
+				</tr>
+				
+				<tr>
+				  
+				  <td>
+				    <br>
+				    <br>
+					<center><h2>B.3 &nbsp;  Background Colorization Model</h2></center>
+  					<center>
+  	                	<img class="" src = "https://cdn.jsdelivr.net/gh/SketchyScene/CDN-for-figures@1.0/figures/siga19/bg_color_network.png" width="100%"></img></href>
+					</center>
+  	              </td>
+				  </tr>
+				  <tr>
+					  <td width=400px>
+							<span style="font-size:16px">This network consists of an image encoder built on residual blocks (Res-Block), a fusion module, a two-branch decoder, and a Res-Block based convolutional discriminator. It is referred to as the BG-RES-RMI-SEG network in the paper.
+                            </span>
+					  </td>
+				</tr>
+				
+				
+          </table>
+          <br>
+		  
+		  <hr>
+          	  <table align=center width=100%>
+			    <center><h1>Datasets</h1></center>
+          		  <tr>
+                        <td>
+                          <center><a href="https://github.com/SketchyScene/SketchySceneColorization"><img width=100% src="https://cdn.jsdelivr.net/gh/SketchyScene/CDN-for-figures@1.0/figures/siga19/dataset.png"/></a></center>
+						  <br>
+						  <p style="font-size:18px">We have built three large-scale datasets for language-based scene sketch colorization:</p>
+							<ol>
+								<li><p style="font-size:16px"><i><strong>MATCHING dataset</strong></i>: including <strong>38k</strong> groups of text-based instance segmentation data for scene sketch.</p></li>
+								<li><p style="font-size:16px"><i><strong>FOREGROUND dataset</strong></i>: including <strong>4k</strong>  groups of text-based sketch object colorization data.</p></li>
+								<li><p style="font-size:16px"><i><strong>BACKGROUND dataset</strong></i>: including <strong>20k</strong>  groups of text-based background colorization data for scene sketch.</p></li>
+							</ol>
+							
+						<center><span style="font-size:18px"><a href='https://github.com/SketchyScene/SketchySceneColorization'>[Download]</a>
+						        </span>
+                        </center>
+                  </td>
+              </tr>
+          </table>
+          <br>
+		  
+		  <hr>
+          	  <table align=center width=100%>
+			    <center><h1>Results</h1></center>
+          		  <tr>
+                        <td>
+                          <center><img width="100%" src="https://cdn.jsdelivr.net/gh/SketchyScene/CDN-for-figures@1.0/figures/siga19/results1.png"/></center>
+						  <br>
+						  <center><img width="100%" src="https://cdn.jsdelivr.net/gh/SketchyScene/CDN-for-figures@1.0/figures/siga19/results2.png"/></center>
+                  </td>
+              </tr>
+			  <tr>
+					  <td>
+					  <br>
+					  <center>
+							<span style="font-size:16px">*For more results, please see main paper and the supplementary material.</span>
+							</center>
+
+					  </td>
+				</tr>
+          </table>
+          <br>
+
+
+          <hr>
+	 		<center><h1>Fast Forward Video</h1></center>
+     		  <br>
+     		  <table align=center width=1100px>
+     			  <tr>
+     	              <td width=600px>
+     					<center>
+                            <iframe width="883" height="500" src="https://www.youtube.com/embed/nC7JBPNLRec" frameborder="0" allowfullscreen></iframe>
+                        </center>
+     	              </td>
+
+                   </tr>
+     		  </table>
+		  <br><br>
+
+        <hr>
+		
+		<center><h1>Related Work</h1></center>
+
+				Changqing Zou, Qian Yu, Ruofei Du, Haoran Mo, Yi-Zhe Song, Tao Xiang, Chengying Gao, Baoquan Chen and Hao Zhang. <strong>SketchyScene: Richly-Annotated Scene Sketches</strong>. ECCV, 2018. [<a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Changqing_Zou_SketchyScene_Richly-Annotated_Scene_ECCV_2018_paper.pdf">Paper</a>][<a href="https://sketchyscene.github.io/SketchyScene/">Webpage</a>][<a href="https://github.com/SketchyScene/SketchyScene">Code</a>]<br><br>
+				
+				Jianbo Chen, Yelong Shen, Jianfeng Gao, Jingjing Liu and Xiaodong Liu. <strong>Language-Based Image Editing with Recurrent Attentive Models</strong>. CVPR, 2018. [<a href="https://arxiv.org/pdf/1711.06288.pdf">Paper</a>][<a href="https://github.com/Jianbo-Lab/LBIE">Code</a>]<br><br>
+				
+				Wengling Chen and James Hays. <strong>SketchyGAN: Towards Diverse and Realistic Sketch to Image Synthesis</strong>. CVPR, 2018. [<a href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_SketchyGAN_Towards_Diverse_CVPR_2018_paper.pdf">Paper</a>][<a href="https://github.com/wchen342/SketchyGAN">Code</a>]<br><br>
+				
+				Chenxi Liu, Zhe Lin, Xiaohui Shen, Jimei Yang, Xin Lu and Alan Yuille. <strong>Recurrent Multimodal Interaction for Referring Image Segmentation</strong>. ICCV, 2017. [<a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Liu_Recurrent_Multimodal_Interaction_ICCV_2017_paper.pdf">Paper</a>][<a href="https://github.com/chenxi116/TF-phrasecut-public">Code</a>]<br><br>
+
+		
+	  <br>
+	  <hr>
+	  <br>
+
+
+  		  <table align=center width=100%>
+  			  <tr>
+  	              <td>
+	  		  <center><h1>BibTex</h1></center>
+			  <p>
+@article{zouSA2019sketchcolorization,
+<br>
+&nbsp;&nbsp;&nbsp; title = {Language-based Colorization of Scene Sketches},
+<br>
+&nbsp;&nbsp;&nbsp; author = {Zou, Changqing and Mo, Haoran and Gao, Chengying and Du, Ruofei and Fu, Hongbo},
+<br>
+&nbsp;&nbsp;&nbsp; journal = {ACM Transactions on Graphics (Proceedings of ACM SIGGRAPH Asia 2019)},
+<br>
+&nbsp;&nbsp;&nbsp; year = {2019},
+<br>
+&nbsp;&nbsp;&nbsp; volume = 38,
+<br>
+&nbsp;&nbsp;&nbsp; number = 6,
+<br>
+&nbsp;&nbsp;&nbsp; pages = {233:1--233:16}
+<br>
+}
+</p>
+		</td>
+			 </tr>
+		</table>
+
+		<br><br>
+
+
+</body>
+</html>
